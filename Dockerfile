@@ -1,8 +1,15 @@
-FROM openjdk:8-jdk-alpine
+FROM r-base:3.6.2
+
+RUN apt update && \
+    apt install -y openjdk-8-jdk
+
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+
+# RUN echo $JAVA_HOME
 
 # Install R
-RUN apk add R && \
-    R -e "install.packages(c('data.table','dplyr','dtplyr','lubridate','markdown','networkD3','stringi', 'DT', 'devtools', 'stringr', 'rkafka'), repos='$MRAN')"
+RUN R CMD javareconf && \
+    R -e "install.packages(c('data.table','dplyr','dtplyr','lubridate','markdown','networkD3','stringi', 'DT', 'stringr', 'rkafka'), repo='mran.microsoft.com')"
     # R -e "devtools::install_github('rstudio/leaflet')" && \
     # R -e "devtools::install_github('bhaskarvk/leaflet.extras')"
 

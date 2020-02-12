@@ -10,7 +10,7 @@ ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 # Install R
 RUN R CMD javareconf && \
     R -e "install.packages(c('data.table','dplyr','stringr','DT','rmarkdown','rkafka','rredis','ggplot2','ggrepel','tidyr','DBI'), repo='mran.microsoft.com')" && \
-    R -e "install.packages(c('RCurl','httr','devtools','mapview'), repo='mran.microsoft.com')" && \
+    R -e "install.packages(c('RCurl','httr','devtools','mapview','knitr','kableExtra','htmltools'), repo='mran.microsoft.com')" && \
     R -e "devtools::install_github('nicolewhite/RNeo4j')"
     # R -e "devtools::install_github('rstudio/leaflet')" && \
     # R -e "devtools::install_github('bhaskarvk/leaflet.extras')"

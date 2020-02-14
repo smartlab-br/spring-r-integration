@@ -24,12 +24,8 @@ RUN R CMD javareconf && \
     R -e "devtools::install_github('rstudio/leaflet')" && \
     R -e "devtools::install_github('bhaskarvk/leaflet.extras')"
 
-# ENV LC_ALL C
-# ENV LANGUAGE en_US:en
-# ENV LC_CTYPE en_US.UTF-8
-
-ENV LC_ALL Portuguese
-ENV LANGUAGE pt_BR:en_US:en
-ENV LC_CTYPE pt_BR.UTF-8
+ENV LC_ALL C
+ENV LANGUAGE en_US:en
+ENV LC_CTYPE en_US.UTF-8
 
 EXPOSE 3838

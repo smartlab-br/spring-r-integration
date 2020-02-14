@@ -9,7 +9,8 @@ RUN apt update && \
     tar xvf phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
     ln -s /opt/phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/local/bin/phantomjs && \
     rm -rf phantomjs-2.1.1-linux-x86_64.tar.bz2 && \
-    cd ..
+    cd .. && \
+    locale-gen pt_BR.UTF-8
     
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV OPENSSL_CONF=/etc/ssl/
@@ -23,8 +24,12 @@ RUN R CMD javareconf && \
     R -e "devtools::install_github('rstudio/leaflet')" && \
     R -e "devtools::install_github('bhaskarvk/leaflet.extras')"
 
-ENV LC_ALL C
-ENV LANGUAGE en_US:en
-ENV LC_CTYPE en_US.UTF-8
+# ENV LC_ALL C
+# ENV LANGUAGE en_US:en
+# ENV LC_CTYPE en_US.UTF-8
+
+ENV LC_ALL Portuguese
+ENV LANGUAGE pt_BR:en_US:en
+ENV LC_CTYPE pt_BR.UTF-8
 
 EXPOSE 3838

@@ -21,7 +21,7 @@ ENV OPENSSL_CONF=/etc/ssl/
 # Install R
 RUN R CMD javareconf && \
     R -e "install.packages(c('data.table','dplyr','stringr','DT','rmarkdown','rkafka','rredis','ggplot2','ggrepel','tidyr','DBI'), repo='mran.microsoft.com')" && \
-    R -e "install.packages(c('RCurl','httr','devtools','mapview','knitr','kableExtra','htmltools','webshot'), repo='mran.microsoft.com')" && \
+    R -e "install.packages(c('RCurl','httr','devtools','mapview','knitr','kableExtra','htmltools','webshot','visNetwork'), repo='mran.microsoft.com')" && \
     R -e "devtools::install_github('nicolewhite/RNeo4j')" && \
     R -e "webshot::install_phantomjs()" && \
     R -e "devtools::install_github('rstudio/leaflet')" && \

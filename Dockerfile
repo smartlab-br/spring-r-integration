@@ -1,4 +1,4 @@
-FROM r-base:3.6.2
+FROM r-base:4.0.3
 
 RUN apt update && \
     apt install -y openjdk-11-jdk libcurl4-openssl-dev libssl-dev libxml2-dev libudunits2-dev libfontconfig1-dev git neo4j-client && \

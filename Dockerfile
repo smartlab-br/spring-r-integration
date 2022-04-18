@@ -1,6 +1,7 @@
 FROM r-base:4.0.3
 
 RUN apt update && \
+    apt install -y ca-certificates && \
     apt install -y openjdk-11-jdk libcurl4-openssl-dev libssl-dev libxml2-dev libudunits2-dev libfontconfig1-dev git neo4j-client && \
     apt install -y --allow-downgrades libxcb1=1.14-3 libxcb-render0=1.14-3 libxcb-shm0=1.14-3 && \
     apt install -y libcairo2-dev libgdal-dev pandoc pandoc-citeproc libjq-dev libxt-dev xtail && \
